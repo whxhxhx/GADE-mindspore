@@ -103,40 +103,6 @@ def generate_data(entity_list, description_files, mention_context_files, tokeniz
     return input_split_tokens, labels, desc_split_tokens
 
 
-def split_train_val_test_data_by_entity(train_ent, val_ent, test_ent, input_tokens, label_inputs, segment_pos_dic, input_mask):
-    train_examples, val_examples, test_examples = [], [], []
-    for e in input_tokens.keys():
-        if e in train_ent:
-            example = {
-                "entity": e,
-                "input_tokens": input_tokens[e],
-                "segment_pos": segment_pos_dic[e],
-                "mask": input_mask[e],
-                "labels": label_inputs[e]
-            }
-            train_examples.append(example)
-
-        elif e in val_ent:
-            example = {
-                "entity": e,
-                "input_tokens": input_tokens[e],
-                "segment_pos": segment_pos_dic[e],
-                "mask": input_mask[e],
-                "labels": label_inputs[e]
-            }
-            val_examples.append(example)
-        else:
-            example = {
-                "entity": e,
-                "input_tokens": input_tokens[e],
-                "segment_pos": segment_pos_dic[e],
-                "mask": input_mask[e],
-                "labels": label_inputs[e]
-            }
-            test_examples.append(example)
-    return train_examples, val_examples, test_examples
-
-
 def accuracy(pred, label):
     pred = mindspore.ops.argmax(pred, 1).long()
     acc = mindspore.ops.mean((pred == label).float()).asnumpy()
