@@ -7,7 +7,7 @@ from numpy import mean
 import argparse
 # from utils.dataset_generation import *
 from logger import set_logger
-from utils.utils import *
+from utils import *
 import mindspore
 from mindspore import nn
 from mindspore.dataset import GeneratorDataset
