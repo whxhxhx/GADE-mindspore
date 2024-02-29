@@ -1,10 +1,10 @@
 # GADE-mindspore
+MindSpore framework implementation for Ambiguous Entity Oriented Targeted Document Detection
 
-## MindSpore framework implementation for Ambiguous Entity Oriented Targeted Document Detection
 ## Dependencies
-
-* Compatible with Python 3.7
-* Dependencies can be installed using requirements.txt
+* Python == 3.7.5
+* mindspore == 2.1.0
+* mindnlp == 0.2.0
 
 
 ### Datasets
@@ -17,28 +17,12 @@ constructed from Wikipedia and the last dataset is constructed from Web document
 
 ##### Run the main code (**GADE**):
 
-* python GADE_main_Wiki.py --model_name GADE_100 --data_type Wiki100
+* python train.py --model_name GADE_100 --data_type Wiki100
 
-* python GADE_main_Wiki.py --model_name GADE_200 --data_type Wiki200
+* python train.py --model_name GADE_200 --data_type Wiki200
 
-* python GADE_main_Wiki.py --model_name GADE_300 --data_type Wiki300
+* python train.py --model_name GADE_300 --data_type Wiki300
 
-##### Run the main code for the base architecture **GADE-local**:
 
-* python GADE_local_main_Wiki.py --model_name GADE_local_100 --data_type Wiki100
 
-* python GADE_local_main_Wiki.py --model_name GADE_local_200 --data_type Wiki200
-
-* python GADE_local_main_Wiki.py --model_name GADE_local_300 --data_type Wiki300
-
-##### Test the model's performance on Web-Test dataset:
-
--- For **GADE**:
-
-* python GADE_main_Web_Test.py
-
--- For **GADE-local**:
-
-* python GADE_local_main_Web_Test.py
-
-### Contact
+For more details about the data set and the experiment settings, please refer to our paper.
